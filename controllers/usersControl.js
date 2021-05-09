@@ -64,11 +64,10 @@ const usersDelete = async(req, res = response) => {
 
     // Fisicamente lo borramos
     // const user = await User.findByIdAndDelete(id);
-
+    
     const user = await User.findByIdAndUpdate(id, {status: false});
 
-
-    res.json(user);
+    res.json({user});
 }
 
 module.exports = {
