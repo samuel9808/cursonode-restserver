@@ -22,7 +22,7 @@
 
         var url = (window.location.hostname.includes('localhost'))
             ? 'http://localhost:8080/api/auth/google'
-            : 'https://node-restservercurso.herokuapp.com'
+            : 'https://node-restservercurso.herokuapp.com/api/auth/google'
 
         function onSignIn(googleUser) {
             var profile = googleUser.getBasicProfile();
@@ -40,7 +40,7 @@
                 body: JSON.stringify( data )
             })
             .then( resp => resp.json() )
-            .then( data => console.log('Nuestro server', data) )
+            .then( data => console.log('Nuestro server', data))
             .catch( console.log );
 
         }
